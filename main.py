@@ -1,12 +1,17 @@
 import requests
 import time
 import smtplib
+import os
 
 # The URL of the website you want to monitor
 url = 'https://www.gseb.org'
 
 # The file name where the previous version of the website data was saved
 previous_data_file = 'previous_data.txt'
+
+if not os.path.exists(previous_data_file):
+    with open(file_path, 'w') as f:
+        f.write('Initial content')
 
 while True:
     # Retrieve the current website data
