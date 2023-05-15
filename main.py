@@ -10,7 +10,7 @@ previous_data_file = 'previous_data.txt'
 
 while True:
     # Retrieve the current website data
-    response = requests.get(url)
+    response = requests.get(url, verify=False)
     current_data = response.text
 
     # Compare the current data with the previous data
@@ -29,7 +29,7 @@ while True:
     # Wait for a certain amount of time before checking again
     time.sleep(300) # Check every 5 minutes
 
-def notify()
+def notify():
     # Send a notification using your preferred method, such as email or push notification
     sender_email = "your_email@gmail.com"
     sender_password = "your_password"
